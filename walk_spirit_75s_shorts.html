@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walk in the Spirit - 75s Shorts | Words of Truth</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #2c1810 0%, #4a1f1f 50%, #2c1810 100%);
+            color: #e6e6fa;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        .shorts-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #2c1810 0%, #4a1f1f 50%, #2c1810 100%);
+            overflow: hidden;
+        }
+
+        /* Floating Background Elements */
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .floating-element {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+        .floating-element:nth-child(2) { top: 20%; right: 15%; animation-delay: 1.5s; }
+        .floating-element:nth-child(3) { bottom: 30%; left: 20%; animation-delay: 3s; }
+        .floating-element:nth-child(4) { bottom: 15%; right: 10%; animation-delay: 4.5s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        /* Top-Left Branding */
+        .top-left-brand {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+        }
+
+        .brand-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #ffd700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            background: rgba(0,0,0,0.3);
+            padding: 8px 12px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        /* Bottom-Right Logo */
+        .bottom-right-logo {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0,0,0,0.3);
+            padding: 8px 12px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .logo-icon {
+            font-size: 1.2rem;
+        }
+
+        .logo-text {
+            font-family: Georgia, serif;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #ffd700;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+        }
+
+        /* Central Script Display */
+        .central-script-display {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 200;
+            width: 85%;
+            max-width: 500px;
+        }
+
+        .script-box {
+            background: rgba(0,0,0,0.7);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        .script-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .script-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        .script-status {
+            font-size: 0.8rem;
+            color: #ffd700;
+            background: rgba(255, 215, 0, 0.1);
+            padding: 5px 10px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            font-weight: bold;
+        }
+
+        .script-content {
+            margin-bottom: 20px;
+        }
+
+        .script-text {
+            font-size: 1.8rem;
+            font-style: italic;
+            color: #e6e6fa;
+            line-height: 1.4;
+            text-align: center;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            background: rgba(230, 230, 250, 0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(230, 230, 250, 0.1);
+            transition: all 0.3s ease;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+        }
+
+        .script-text.highlight {
+            background: rgba(255, 215, 0, 0.1);
+            border-color: rgba(255, 215, 0, 0.3);
+            transform: scale(1.02);
+        }
+
+        .script-progress {
+            margin-bottom: 20px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4169e1, #6495ed);
+            width: 0%;
+            transition: width 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .progress-text {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #ffd700;
+        }
+
+        .script-controls {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: nowrap;
+        }
+
+        .script-btn {
+            background: linear-gradient(135deg, #4169e1, #6495ed);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: bold;
+            min-width: 80px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(65, 105, 225, 0.3);
+        }
+
+        .script-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(65, 105, 225, 0.4);
+        }
+
+        .script-btn.secondary {
+            background: linear-gradient(135deg, #666, #888);
+        }
+
+        .script-btn.secondary:hover {
+            box-shadow: 0 6px 20px rgba(102, 102, 102, 0.4);
+        }
+
+        /* Video Player Area */
+        .video-area {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .video-player {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .script-text {
+                font-size: 1.4rem;
+                min-height: 60px;
+                padding: 10px;
+            }
+
+            .script-box {
+                padding: 20px;
+            }
+
+            .script-controls {
+                gap: 8px;
+            }
+
+            .script-btn {
+                padding: 6px 12px;
+                font-size: 0.7rem;
+                min-width: 70px;
+            }
+
+            .brand-title {
+                font-size: 1rem;
+                padding: 6px 10px;
+            }
+
+            .logo-text {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="shorts-container">
+        <!-- Floating Background Elements -->
+        <div class="floating-elements">
+            <div class="floating-element">📖</div>
+            <div class="floating-element">🎤</div>
+            <div class="floating-element">✨</div>
+            <div class="floating-element">🌿</div>
+        </div>
+
+        <!-- Top-Left Branding -->
+        <div class="top-left-brand">
+            <h2 class="brand-title">🌿 Rightly Dividing!</h2>
+        </div>
+
+        <!-- Bottom-Right Logo -->
+        <div class="bottom-right-logo">
+            <div class="logo-container">
+                <span class="logo-icon">📖</span>
+                <span class="logo-text">Words of Truth</span>
+            </div>
+        </div>
+
+        <!-- Central Script Display -->
+        <div class="central-script-display">
+            <div class="script-box">
+                <div class="script-header">
+                    <div class="script-title">
+                        <span>⛪</span>
+                        <span>Comprehensive Teaching - 75s</span>
+                    </div>
+                    <div class="script-status" id="scriptStatus">⏸️ PAUSED</div>
+                </div>
+                <div class="script-content">
+                    <div class="script-text" id="scriptText">
+                        "Walk in the Spirit. What does that mean and how do we do it?"
+                    </div>
+                </div>
+                <div class="script-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="progress-text">Progress: <span id="progressText">0%</span></div>
+                </div>
+                <div class="script-controls">
+                    <button class="script-btn" onclick="startScript()">▶️ START</button>
+                    <button class="script-btn secondary" onclick="pauseScript()">⏸️ PAUSE</button>
+                    <button class="script-btn" onclick="resetScript()">🔄 RESET</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Video Player Area (Background) -->
+        <div class="video-area">
+            <video class="video-player" id="backgroundVideo" autoplay muted loop>
+                <source src="walk_spirit_shorts_75s_20250726_191037.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <!-- Audio Narration -->
+        <audio id="narrationAudio" preload="auto" controls style="display: none;">
+            <source src="walk_spirit_shorts_75s_20250726_191037.m4a" type="audio/mp4">
+        </audio>
+
+        <!-- Audio Controls -->
+        <div class="audio-controls" style="position: absolute; top: 10px; right: 10px; z-index: 200;">
+            <button onclick="toggleAudio()" id="audioBtn" style="background: rgba(0,0,0,0.7); color: #ffd700; border: 1px solid #ffd700; padding: 5px 10px; border-radius: 10px; cursor: pointer; font-size: 0.8rem;">
+                🔊 Audio ON
+            </button>
+            <audio id="testAudio" controls style="margin-top: 10px; width: 200px; height: 40px;">
+                <source src="walk_spirit_shorts_75s_20250726_191037.m4a" type="audio/mp4">
+            </audio>
+        </div>
+    </div>
+
+    <script>
+        let scriptInterval;
+        let currentScriptIndex = 0;
+        let isNarrating = false;
+
+        // Script content with timing (same format as previous series)
+        const scriptContent = [
+            { text: "Walk in the Spirit. What does that mean and how do we do it?", time: 0 },
+            { text: "It's about living under the Spirit's guidance and control.", time: 5 },
+            { text: "Not walking in the flesh, but in the Spirit's power.", time: 10 },
+            { text: "Galatians 5:16 - Walk in the Spirit and you shall not fulfill the lust of the flesh.", time: 15 },
+            { text: "It means surrendering your will to God's Spirit.", time: 20 },
+            { text: "Romans 8:14 - For as many as are led by the Spirit of God.", time: 25 },
+            { text: "These are the sons of God.", time: 30 },
+            { text: "Let the Holy Spirit lead your daily life!", time: 35 }
+        ];
+
+        function startScript() {
+            if (isNarrating) return;
+            
+            isNarrating = true;
+            currentScriptIndex = 0;
+            
+            const audio = document.getElementById('narrationAudio');
+            const testAudio = document.getElementById('testAudio');
+            
+            // Start both audio elements
+            audio.currentTime = 0;
+            testAudio.currentTime = 0;
+            audio.play();
+            testAudio.play();
+            
+            document.getElementById('scriptStatus').textContent = '▶️ PLAYING';
+            
+            // Start script synchronization
+            scriptInterval = setInterval(updateScriptDisplay, 100);
+        }
+
+        function pauseScript() {
+            if (!isNarrating) return;
+            
+            isNarrating = false;
+            
+            const audio = document.getElementById('narrationAudio');
+            const testAudio = document.getElementById('testAudio');
+            
+            audio.pause();
+            testAudio.pause();
+            
+            document.getElementById('scriptStatus').textContent = '⏸️ PAUSED';
+            
+            clearInterval(scriptInterval);
+        }
+
+        function resetScript() {
+            pauseScript();
+            
+            currentScriptIndex = 0;
+            document.getElementById('scriptText').textContent = scriptContent[0].text;
+            document.getElementById('progressFill').style.width = '0%';
+            document.getElementById('progressText').textContent = '0%';
+            document.getElementById('scriptText').classList.remove('highlight');
+            
+            const audio = document.getElementById('narrationAudio');
+            const testAudio = document.getElementById('testAudio');
+            audio.currentTime = 0;
+            testAudio.currentTime = 0;
+        }
+
+        function updateScriptDisplay() {
+            const audio = document.getElementById('narrationAudio');
+            const currentTime = audio.currentTime;
+            
+            // Find the appropriate script segment based on current time
+            let newIndex = 0;
+            for (let i = 0; i < scriptContent.length; i++) {
+                if (currentTime >= scriptContent[i].time) {
+                    newIndex = i;
+                }
+            }
+            
+            // Update script if index changed
+            if (newIndex !== currentScriptIndex) {
+                currentScriptIndex = newIndex;
+                const scriptText = document.getElementById('scriptText');
+                scriptText.textContent = scriptContent[currentScriptIndex].text;
+                
+                // Add highlight effect
+                scriptText.classList.add('highlight');
+                setTimeout(() => scriptText.classList.remove('highlight'), 500);
+            }
+            
+            // Update progress
+            const progress = (currentTime / audio.duration) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+            document.getElementById('progressText').textContent = Math.round(progress) + '%';
+            
+            // Check if audio ended
+            if (audio.ended) {
+                pauseScript();
+                document.getElementById('scriptStatus').textContent = '✅ COMPLETED';
+            }
+        }
+
+        function toggleAudio() {
+            const btn = document.getElementById('audioBtn');
+            const testAudio = document.getElementById('testAudio');
+            
+            if (testAudio.paused) {
+                testAudio.play();
+                btn.textContent = '🔊 Audio ON';
+            } else {
+                testAudio.pause();
+                btn.textContent = '🔇 Audio OFF';
+            }
+        }
+
+        // Make functions globally accessible
+        window.startScript = startScript;
+        window.pauseScript = pauseScript;
+        window.resetScript = resetScript;
+        window.toggleAudio = toggleAudio;
+
+        // Auto-start script after 2 seconds
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                if (!isNarrating) {
+                    startScript();
+                }
+            }, 2000);
+            
+            // Add audio event listeners
+            const audio = document.getElementById('narrationAudio');
+            const testAudio = document.getElementById('testAudio');
+            
+            audio.addEventListener('ended', function() {
+                document.getElementById('scriptStatus').textContent = '✅ COMPLETED';
+                isNarrating = false;
+                clearInterval(scriptInterval);
+            });
+            
+            testAudio.addEventListener('ended', function() {
+                if (!isNarrating) {
+                    document.getElementById('scriptStatus').textContent = '✅ COMPLETED';
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

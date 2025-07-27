@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walk in the Spirit - All Versions | Words of Truth</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #2c1810 0%, #4a1f1f 50%, #2c1810 100%);
+            color: #e6e6fa;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 20px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: #ffd700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #e6e6fa;
+        }
+
+        .source-link {
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .source-link:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        /* Versions Grid */
+        .versions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .version-card {
+            background: rgba(0,0,0,0.7);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .version-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.7);
+        }
+
+        .version-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 20px;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            background: #000;
+        }
+
+        .video-player {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 15px;
+        }
+
+        .script-display {
+            background: rgba(230, 230, 250, 0.05);
+            border: 1px solid rgba(230, 230, 250, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .script-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: #e6e6fa;
+            line-height: 1.4;
+            text-align: center;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+        }
+
+        .script-controls {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .script-btn {
+            background: linear-gradient(135deg, #4169e1, #6495ed);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(65, 105, 225, 0.3);
+        }
+
+        .script-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(65, 105, 225, 0.4);
+        }
+
+        .script-btn.secondary {
+            background: linear-gradient(135deg, #666, #888);
+        }
+
+        .script-btn.secondary:hover {
+            box-shadow: 0 6px 20px rgba(102, 102, 102, 0.4);
+        }
+
+        .progress-container {
+            margin-bottom: 15px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4169e1, #6495ed);
+            width: 0%;
+            transition: width 0.3s ease;
+            border-radius: 5px;
+        }
+
+        .progress-text {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #ffd700;
+        }
+
+        /* Features Section */
+        .features-section {
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        .features-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #ffd700;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 215, 0, 0.05);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        .feature-description {
+            font-size: 0.95rem;
+            color: #e6e6fa;
+            line-height: 1.4;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+
+            .versions-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .version-card {
+                padding: 20px;
+            }
+
+            .version-title {
+                font-size: 1.1rem;
+            }
+
+            .script-text {
+                font-size: 1.2rem;
+            }
+
+            .script-controls {
+                gap: 8px;
+            }
+
+            .script-btn {
+                padding: 8px 16px;
+                font-size: 0.8rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🌿 Walk in the Spirit</h1>
+            <p>All Three Versions - Complete Video Series</p>
+            <p>Source: <a href="https://www.youtube.com/watch?v=pYMvBz8ZpIQ" target="_blank" class="source-link">YouTube Video</a></p>
+            <p>🎤 Human-Sounding Voice • 📱 YouTube Shorts Optimized • 🎬 Professional Quality</p>
+        </div>
+
+        <!-- All Three Versions -->
+        <div class="versions-grid">
+            <!-- 25-Second Version -->
+            <div class="version-card">
+                <div class="version-title">
+                    <span>⚡</span>
+                    <span>Quick & Punchy - 25s</span>
+                </div>
+                <div class="video-container">
+                    <video class="video-player" id="video25s" controls>
+                        <source src="walk_spirit_shorts_25s_20250726_191028.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="script-display" id="script25s">
+                    <div class="script-text">
+                        "Walk in the Spirit. What does that mean and how do we do it?"
+                    </div>
+                </div>
+                <div class="script-controls">
+                    <button class="script-btn" onclick="startScript25s()">▶️ START</button>
+                    <button class="script-btn secondary" onclick="pauseScript25s()">⏸️ PAUSE</button>
+                    <button class="script-btn" onclick="resetScript25s()">🔄 RESET</button>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress25s"></div>
+                    </div>
+                    <div class="progress-text">Progress: <span id="progressText25s">0%</span></div>
+                </div>
+            </div>
+
+            <!-- 50-Second Version -->
+            <div class="version-card">
+                <div class="version-title">
+                    <span>📚</span>
+                    <span>Detailed Explanation - 50s</span>
+                </div>
+                <div class="video-container">
+                    <video class="video-player" id="video50s" controls>
+                        <source src="walk_spirit_shorts_50s_20250726_191033.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="script-display" id="script50s">
+                    <div class="script-text">
+                        "Walk in the Spirit. What does that mean and how do we do it?"
+                    </div>
+                </div>
+                <div class="script-controls">
+                    <button class="script-btn" onclick="startScript50s()">▶️ START</button>
+                    <button class="script-btn secondary" onclick="pauseScript50s()">⏸️ PAUSE</button>
+                    <button class="script-btn" onclick="resetScript50s()">🔄 RESET</button>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress50s"></div>
+                    </div>
+                    <div class="progress-text">Progress: <span id="progressText50s">0%</span></div>
+                </div>
+            </div>
+
+            <!-- 75-Second Version -->
+            <div class="version-card">
+                <div class="version-title">
+                    <span>⛪</span>
+                    <span>Comprehensive Teaching - 75s</span>
+                </div>
+                <div class="video-container">
+                    <video class="video-player" id="video75s" controls>
+                        <source src="walk_spirit_shorts_75s_20250726_191037.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="script-display" id="script75s">
+                    <div class="script-text">
+                        "Walk in the Spirit. What does that mean and how do we do it?"
+                    </div>
+                </div>
+                <div class="script-controls">
+                    <button class="script-btn" onclick="startScript75s()">▶️ START</button>
+                    <button class="script-btn secondary" onclick="pauseScript75s()">⏸️ PAUSE</button>
+                    <button class="script-btn" onclick="resetScript75s()">🔄 RESET</button>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress75s"></div>
+                    </div>
+                    <div class="progress-text">Progress: <span id="progressText75s">0%</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="features-section">
+            <h2>🎯 Series Features</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">📖</div>
+                    <div class="feature-title">Biblical Teaching</div>
+                    <div class="feature-description">Focused on walking in the Spirit according to Galatians 5:16 and Romans 8:14</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎤</div>
+                    <div class="feature-title">Human Voice</div>
+                    <div class="feature-description">Professional Daniel voice with natural British accent for clear understanding</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📱</div>
+                    <div class="feature-title">Mobile Optimized</div>
+                    <div class="feature-description">Perfect 9:16 aspect ratio designed specifically for YouTube Shorts</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎬</div>
+                    <div class="feature-title">Professional Quality</div>
+                    <div class="feature-description">Broadcast-ready videos with synchronized script display and controls</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <div class="feature-title">Multiple Durations</div>
+                    <div class="feature-description">25s, 50s, and 75s versions for different engagement levels</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🌿</div>
+                    <div class="feature-title">Spiritual Growth</div>
+                    <div class="feature-description">Practical guidance on living a Spirit-led Christian life</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Script content for each version
+        const scriptContent25s = [
+            { text: "Walk in the Spirit. What does that mean and how do we do it?", time: 0 },
+            { text: "It's about living under the Spirit's guidance and control.", time: 5 },
+            { text: "Not walking in the flesh, but in the Spirit's power.", time: 10 },
+            { text: "Galatians 5:16 - Walk in the Spirit and you shall not fulfill the lust of the flesh.", time: 15 },
+            { text: "Let the Holy Spirit lead your daily life!", time: 20 }
+        ];
+
+        const scriptContent50s = [
+            { text: "Walk in the Spirit. What does that mean and how do we do it?", time: 0 },
+            { text: "It's about living under the Spirit's guidance and control.", time: 5 },
+            { text: "Not walking in the flesh, but in the Spirit's power.", time: 10 },
+            { text: "Galatians 5:16 - Walk in the Spirit and you shall not fulfill the lust of the flesh.", time: 15 },
+            { text: "It means surrendering your will to God's Spirit.", time: 20 },
+            { text: "Let the Holy Spirit lead your daily life!", time: 25 }
+        ];
+
+        const scriptContent75s = [
+            { text: "Walk in the Spirit. What does that mean and how do we do it?", time: 0 },
+            { text: "It's about living under the Spirit's guidance and control.", time: 5 },
+            { text: "Not walking in the flesh, but in the Spirit's power.", time: 10 },
+            { text: "Galatians 5:16 - Walk in the Spirit and you shall not fulfill the lust of the flesh.", time: 15 },
+            { text: "It means surrendering your will to God's Spirit.", time: 20 },
+            { text: "Romans 8:14 - For as many as are led by the Spirit of God.", time: 25 },
+            { text: "These are the sons of God.", time: 30 },
+            { text: "Let the Holy Spirit lead your daily life!", time: 35 }
+        ];
+
+        // Global variables for each version
+        let scriptInterval25s, scriptInterval50s, scriptInterval75s;
+        let currentScriptIndex25s = 0, currentScriptIndex50s = 0, currentScriptIndex75s = 0;
+        let isNarrating25s = false, isNarrating50s = false, isNarrating75s = false;
+
+        // 25-Second Version Functions
+        function startScript25s() {
+            if (isNarrating25s) return;
+            
+            isNarrating25s = true;
+            currentScriptIndex25s = 0;
+            
+            const video = document.getElementById('video25s');
+            video.currentTime = 0;
+            video.play();
+            
+            scriptInterval25s = setInterval(() => updateScriptDisplay25s(), 100);
+        }
+
+        function pauseScript25s() {
+            if (!isNarrating25s) return;
+            
+            isNarrating25s = false;
+            const video = document.getElementById('video25s');
+            video.pause();
+            clearInterval(scriptInterval25s);
+        }
+
+        function resetScript25s() {
+            pauseScript25s();
+            currentScriptIndex25s = 0;
+            document.getElementById('script25s').querySelector('.script-text').textContent = scriptContent25s[0].text;
+            document.getElementById('progress25s').style.width = '0%';
+            document.getElementById('progressText25s').textContent = '0%';
+            
+            const video = document.getElementById('video25s');
+            video.currentTime = 0;
+        }
+
+        function updateScriptDisplay25s() {
+            const video = document.getElementById('video25s');
+            const currentTime = video.currentTime;
+            
+            let newIndex = 0;
+            for (let i = 0; i < scriptContent25s.length; i++) {
+                if (currentTime >= scriptContent25s[i].time) {
+                    newIndex = i;
+                }
+            }
+            
+            if (newIndex !== currentScriptIndex25s) {
+                currentScriptIndex25s = newIndex;
+                const scriptText = document.getElementById('script25s').querySelector('.script-text');
+                scriptText.textContent = scriptContent25s[currentScriptIndex25s].text;
+            }
+            
+            const progress = (currentTime / video.duration) * 100;
+            document.getElementById('progress25s').style.width = progress + '%';
+            document.getElementById('progressText25s').textContent = Math.round(progress) + '%';
+            
+            if (video.ended) {
+                pauseScript25s();
+            }
+        }
+
+        // 50-Second Version Functions
+        function startScript50s() {
+            if (isNarrating50s) return;
+            
+            isNarrating50s = true;
+            currentScriptIndex50s = 0;
+            
+            const video = document.getElementById('video50s');
+            video.currentTime = 0;
+            video.play();
+            
+            scriptInterval50s = setInterval(() => updateScriptDisplay50s(), 100);
+        }
+
+        function pauseScript50s() {
+            if (!isNarrating50s) return;
+            
+            isNarrating50s = false;
+            const video = document.getElementById('video50s');
+            video.pause();
+            clearInterval(scriptInterval50s);
+        }
+
+        function resetScript50s() {
+            pauseScript50s();
+            currentScriptIndex50s = 0;
+            document.getElementById('script50s').querySelector('.script-text').textContent = scriptContent50s[0].text;
+            document.getElementById('progress50s').style.width = '0%';
+            document.getElementById('progressText50s').textContent = '0%';
+            
+            const video = document.getElementById('video50s');
+            video.currentTime = 0;
+        }
+
+        function updateScriptDisplay50s() {
+            const video = document.getElementById('video50s');
+            const currentTime = video.currentTime;
+            
+            let newIndex = 0;
+            for (let i = 0; i < scriptContent50s.length; i++) {
+                if (currentTime >= scriptContent50s[i].time) {
+                    newIndex = i;
+                }
+            }
+            
+            if (newIndex !== currentScriptIndex50s) {
+                currentScriptIndex50s = newIndex;
+                const scriptText = document.getElementById('script50s').querySelector('.script-text');
+                scriptText.textContent = scriptContent50s[currentScriptIndex50s].text;
+            }
+            
+            const progress = (currentTime / video.duration) * 100;
+            document.getElementById('progress50s').style.width = progress + '%';
+            document.getElementById('progressText50s').textContent = Math.round(progress) + '%';
+            
+            if (video.ended) {
+                pauseScript50s();
+            }
+        }
+
+        // 75-Second Version Functions
+        function startScript75s() {
+            if (isNarrating75s) return;
+            
+            isNarrating75s = true;
+            currentScriptIndex75s = 0;
+            
+            const video = document.getElementById('video75s');
+            video.currentTime = 0;
+            video.play();
+            
+            scriptInterval75s = setInterval(() => updateScriptDisplay75s(), 100);
+        }
+
+        function pauseScript75s() {
+            if (!isNarrating75s) return;
+            
+            isNarrating75s = false;
+            const video = document.getElementById('video75s');
+            video.pause();
+            clearInterval(scriptInterval75s);
+        }
+
+        function resetScript75s() {
+            pauseScript75s();
+            currentScriptIndex75s = 0;
+            document.getElementById('script75s').querySelector('.script-text').textContent = scriptContent75s[0].text;
+            document.getElementById('progress75s').style.width = '0%';
+            document.getElementById('progressText75s').textContent = '0%';
+            
+            const video = document.getElementById('video75s');
+            video.currentTime = 0;
+        }
+
+        function updateScriptDisplay75s() {
+            const video = document.getElementById('video75s');
+            const currentTime = video.currentTime;
+            
+            let newIndex = 0;
+            for (let i = 0; i < scriptContent75s.length; i++) {
+                if (currentTime >= scriptContent75s[i].time) {
+                    newIndex = i;
+                }
+            }
+            
+            if (newIndex !== currentScriptIndex75s) {
+                currentScriptIndex75s = newIndex;
+                const scriptText = document.getElementById('script75s').querySelector('.script-text');
+                scriptText.textContent = scriptContent75s[currentScriptIndex75s].text;
+            }
+            
+            const progress = (currentTime / video.duration) * 100;
+            document.getElementById('progress75s').style.width = progress + '%';
+            document.getElementById('progressText75s').textContent = Math.round(progress) + '%';
+            
+            if (video.ended) {
+                pauseScript75s();
+            }
+        }
+
+        // Make functions globally accessible
+        window.startScript25s = startScript25s;
+        window.pauseScript25s = pauseScript25s;
+        window.resetScript25s = resetScript25s;
+        window.startScript50s = startScript50s;
+        window.pauseScript50s = pauseScript50s;
+        window.resetScript50s = resetScript50s;
+        window.startScript75s = startScript75s;
+        window.pauseScript75s = pauseScript75s;
+        window.resetScript75s = resetScript75s;
+
+        // Auto-start all scripts after 2 seconds
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                if (!isNarrating25s && !isNarrating50s && !isNarrating75s) {
+                    startScript25s();
+                    startScript50s();
+                    startScript75s();
+                }
+            }, 2000);
+        });
+    </script>
+</body>
+</html> 
