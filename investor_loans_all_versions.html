@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💳 Investor Loans & Financing - Complete Series</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #2c1810 0%, #4a1f1f 50%, #2c1810 100%);
+            min-height: 100vh;
+            color: #e6e6fa;
+            overflow-x: hidden;
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #e6e6fa;
+            margin-bottom: 20px;
+        }
+
+        .brand {
+            font-size: 1rem;
+            color: #ffd700;
+            font-family: Georgia, serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .series-intro {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .intro-title {
+            font-size: 1.8rem;
+            color: #ffd700;
+            margin-bottom: 20px;
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .versions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .version-card {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .version-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .version-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ffd700, #4169e1, #ffd700);
+        }
+
+        .version-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .version-icon {
+            font-size: 2rem;
+            margin-right: 15px;
+        }
+
+        .version-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        .version-duration {
+            font-size: 1rem;
+            color: #e6e6fa;
+            margin-top: 5px;
+        }
+
+        .version-description {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            color: #e6e6fa;
+        }
+
+        .version-features {
+            margin-bottom: 25px;
+        }
+
+        .feature-list {
+            list-style: none;
+            text-align: left;
+        }
+
+        .feature-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+            font-size: 0.9rem;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .version-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .version-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #4169e1, #6495ed);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .version-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(65, 105, 225, 0.4);
+        }
+
+        .version-btn.secondary {
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            color: #2c1810;
+        }
+
+        .version-btn.secondary:hover {
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        .content-summary {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+
+        .summary-title {
+            font-size: 2rem;
+            color: #ffd700;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .summary-section {
+            margin-bottom: 30px;
+        }
+
+        .summary-section h3 {
+            color: #ffd700;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .summary-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .summary-section ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .summary-section li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .summary-section li::before {
+            content: '💳';
+            position: absolute;
+            left: -25px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+        }
+
+        .footer h3 {
+            color: #ffd700;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .footer p {
+            color: #e6e6fa;
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .versions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .title {
+                font-size: 2rem;
+            }
+            
+            .version-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="title">💳 Investor Loans & Financing</h1>
+        <p class="subtitle">Complete Financing Guide for Real Estate Investors</p>
+        <p class="subtitle">Source: <a href="https://www.youtube.com/watch?v=example" style="color: #ffd700;" target="_blank">YouTube Video</a></p>
+        <p class="brand">💰 Investment Truth</p>
+    </div>
+
+    <div class="container">
+        <div class="series-intro">
+            <h2 class="intro-title">Master Real Estate Investor Financing</h2>
+            <p class="intro-text">
+                Discover the complete guide to real estate investor financing options. From conventional loans to creative financing strategies, learn how to fund your real estate investment portfolio effectively and maximize your buying power.
+            </p>
+            <p class="intro-text">
+                This comprehensive series covers everything from basic loan types to advanced financing techniques, helping you understand the best options for your investment strategy and financial goals.
+            </p>
+        </div>
+
+        <div class="versions-grid">
+            <!-- 15 Second Version -->
+            <div class="version-card">
+                <div class="version-header">
+                    <span class="version-icon">⚡</span>
+                    <div>
+                        <div class="version-title">Ultra Quick Overview</div>
+                        <div class="version-duration">15 seconds</div>
+                    </div>
+                </div>
+                <div class="version-description">
+                    Perfect for busy investors who want the core financing concepts in seconds. Covers essential loan types and basic requirements.
+                </div>
+                <div class="version-features">
+                    <ul class="feature-list">
+                        <li>Conventional loan basics</li>
+                        <li>Down payment requirements</li>
+                        <li>Credit score importance</li>
+                        <li>Quick financing overview</li>
+                    </ul>
+                </div>
+                <div class="version-links">
+                    <a href="investor_loans_15s_shorts.html" class="version-btn">🎬 View Interactive</a>
+                    <a href="investor_loans_shorts_15s_20250727_141540.mp4" class="version-btn secondary" download>📥 Download Video</a>
+                </div>
+            </div>
+
+            <!-- 25 Second Version -->
+            <div class="version-card">
+                <div class="version-header">
+                    <span class="version-icon">⚡</span>
+                    <div>
+                        <div class="version-title">Quick Analysis</div>
+                        <div class="version-duration">25 seconds</div>
+                    </div>
+                </div>
+                <div class="version-description">
+                    Essential financing concepts for real estate investors. Learn about different loan types and their key requirements.
+                </div>
+                <div class="version-features">
+                    <ul class="feature-list">
+                        <li>Conventional vs portfolio loans</li>
+                        <li>Down payment strategies</li>
+                        <li>Credit requirements</li>
+                        <li>Basic loan comparison</li>
+                    </ul>
+                </div>
+                <div class="version-links">
+                    <a href="investor_loans_25s_shorts.html" class="version-btn">🎬 View Interactive</a>
+                    <a href="investor_loans_shorts_25s_20250727_141546.mp4" class="version-btn secondary" download>📥 Download Video</a>
+                </div>
+            </div>
+
+            <!-- 50 Second Version -->
+            <div class="version-card">
+                <div class="version-header">
+                    <span class="version-icon">📚</span>
+                    <div>
+                        <div class="version-title">Detailed Analysis</div>
+                        <div class="version-duration">50 seconds</div>
+                    </div>
+                </div>
+                <div class="version-description">
+                    Comprehensive overview of investor financing options. Understand the pros and cons of different loan types.
+                </div>
+                <div class="version-features">
+                    <ul class="feature-list">
+                        <li>Conventional loan details</li>
+                        <li>Portfolio loan benefits</li>
+                        <li>Hard money alternatives</li>
+                        <li>Financing strategies</li>
+                    </ul>
+                </div>
+                <div class="version-links">
+                    <a href="investor_loans_50s_shorts.html" class="version-btn">🎬 View Interactive</a>
+                    <a href="investor_loans_shorts_50s_20250727_141549.mp4" class="version-btn secondary" download>📥 Download Video</a>
+                </div>
+            </div>
+
+            <!-- 75 Second Version -->
+            <div class="version-card">
+                <div class="version-header">
+                    <span class="version-icon">⛪</span>
+                    <div>
+                        <div class="version-title">Complete Analysis</div>
+                        <div class="version-duration">75 seconds</div>
+                    </div>
+                </div>
+                <div class="version-description">
+                    In-depth financing guide covering all major loan types and advanced strategies for real estate investors.
+                </div>
+                <div class="version-features">
+                    <ul class="feature-list">
+                        <li>Complete loan comparison</li>
+                        <li>Advanced strategies</li>
+                        <li>Creative financing</li>
+                        <li>Risk management</li>
+                    </ul>
+                </div>
+                <div class="version-links">
+                    <a href="investor_loans_75s_shorts.html" class="version-btn">🎬 View Interactive</a>
+                    <a href="investor_loans_shorts_75s_20250727_141555.mp4" class="version-btn secondary" download>📥 Download Video</a>
+                </div>
+            </div>
+
+            <!-- 90 Second Version -->
+            <div class="version-card">
+                <div class="version-header">
+                    <span class="version-icon">📊</span>
+                    <div>
+                        <div class="version-title">Extended Analysis</div>
+                        <div class="version-duration">90 seconds</div>
+                    </div>
+                </div>
+                <div class="version-description">
+                    Advanced financing strategies and portfolio building techniques for serious real estate investors.
+                </div>
+                <div class="version-features">
+                    <ul class="feature-list">
+                        <li>Portfolio building</li>
+                        <li>Advanced techniques</li>
+                        <li>Market timing</li>
+                        <li>Scaling strategies</li>
+                    </ul>
+                </div>
+                <div class="version-links">
+                    <a href="investor_loans_90s_shorts.html" class="version-btn">🎬 View Interactive</a>
+                    <a href="investor_loans_shorts_90s_20250727_141601.mp4" class="version-btn secondary" download>📥 Download Video</a>
+                </div>
+            </div>
+
+            <!-- 100 Second Version -->
+            <div class="version-card">
+                <div class="version-header">
+                    <span class="version-icon">🏗️</span>
+                    <div>
+                        <div class="version-title">Advanced Strategy</div>
+                        <div class="version-duration">100 seconds</div>
+                    </div>
+                </div>
+                <div class="version-description">
+                    Master-level financing strategies for building and scaling a real estate investment portfolio.
+                </div>
+                <div class="version-features">
+                    <ul class="feature-list">
+                        <li>Master strategies</li>
+                        <li>Portfolio optimization</li>
+                        <li>Risk mitigation</li>
+                        <li>Advanced techniques</li>
+                    </ul>
+                </div>
+                <div class="version-links">
+                    <a href="investor_loans_100s_shorts.html" class="version-btn">🎬 View Interactive</a>
+                    <a href="investor_loans_shorts_100s_20250727_141608.mp4" class="version-btn secondary" download>📥 Download Video</a>
+                </div>
+            </div>
+
+            <!-- 120 Second Version -->
+            <div class="version-card">
+                <div class="version-header">
+                    <span class="version-icon">🚀</span>
+                    <div>
+                        <div class="version-title">Master Strategy</div>
+                        <div class="version-duration">120 seconds</div>
+                    </div>
+                </div>
+                <div class="version-description">
+                    Complete master guide to real estate investor financing with advanced strategies and portfolio scaling techniques.
+                </div>
+                <div class="version-features">
+                    <ul class="feature-list">
+                        <li>Complete financing guide</li>
+                        <li>Advanced strategies</li>
+                        <li>Portfolio scaling</li>
+                        <li>Master techniques</li>
+                    </ul>
+                </div>
+                <div class="version-links">
+                    <a href="investor_loans_120s_shorts.html" class="version-btn">🎬 View Interactive</a>
+                    <a href="investor_loans_shorts_120s_20250727_141615.mp4" class="version-btn secondary" download>📥 Download Video</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-summary">
+            <h2 class="summary-title">💳 Complete Investor Financing Guide</h2>
+            
+            <div class="summary-section">
+                <h3>🎯 What You'll Learn</h3>
+                <p>This comprehensive series covers all aspects of real estate investor financing, from basic loan types to advanced strategies for building and scaling your investment portfolio.</p>
+                
+                <h4>📋 Core Topics Covered:</h4>
+                <ul>
+                    <li><strong>Conventional Loans</strong> - Traditional financing options with standard requirements</li>
+                    <li><strong>Portfolio Loans</strong> - Flexible financing for multiple properties</li>
+                    <li><strong>Hard Money Loans</strong> - Quick financing for fix-and-flip projects</li>
+                    <li><strong>Creative Financing</strong> - Alternative funding strategies</li>
+                    <li><strong>Down Payment Strategies</strong> - Minimizing upfront capital requirements</li>
+                    <li><strong>Credit Optimization</strong> - Maximizing your borrowing power</li>
+                </ul>
+            </div>
+
+            <div class="summary-section">
+                <h3>💰 Key Benefits</h3>
+                <ul>
+                    <li><strong>Multiple Financing Options</strong> - Understand all available loan types</li>
+                    <li><strong>Risk Management</strong> - Learn how to protect your investments</li>
+                    <li><strong>Portfolio Building</strong> - Strategies for scaling your real estate portfolio</li>
+                    <li><strong>Cost Optimization</strong> - Minimize financing costs and maximize returns</li>
+                    <li><strong>Market Adaptation</strong> - Adjust strategies based on market conditions</li>
+                </ul>
+            </div>
+
+            <div class="summary-section">
+                <h3>🎬 Series Features</h3>
+                <ul>
+                    <li><strong>7 Duration Formats</strong> - From quick overview to comprehensive guide</li>
+                    <li><strong>Interactive Learning</strong> - Synchronized audio and script display</li>
+                    <li><strong>Professional Quality</strong> - Broadcast-ready video production</li>
+                    <li><strong>Mobile Optimized</strong> - Perfect for YouTube Shorts and social media</li>
+                    <li><strong>Downloadable Content</strong> - Access videos offline for continued learning</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h3>💳 Investment Truth</h3>
+        <p>Master real estate investor financing for portfolio success</p>
+        <p>Transform your investment strategy with comprehensive financing knowledge</p>
+    </div>
+</body>
+</html> 
